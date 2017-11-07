@@ -1,1 +1,15 @@
-<h1>Home Page</h1>
+<section>
+    <div class="sidebar">
+        <header>
+            <p class="title">Bloc Chat</p>
+
+            <table class="rooms-list">
+                  <tr ng-repeat="room in chatRooms" class="chatrooms">
+                      <th scope="row"></th>
+                      <td><a ng-link="['RoomDetail', {id: room.$id}]">{{ room.$id }}</a>
+                            <td></td>
+                  </tr>
+            </table>
+        </header>
+    </div>
+</section>
