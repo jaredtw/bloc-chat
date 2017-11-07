@@ -1,15 +1,19 @@
 <section>
-    <div class="sidebar">
-        <header>
-            <p class="title">Bloc Chat</p>
+  	<div class="rooms">
 
-            <table class="rooms-list">
-                  <tr ng-repeat="room in chatRooms" class="chatrooms">
-                      <th scope="row"></th>
-                      <td><a ng-link="['RoomDetail', {id: room.$id}]">{{ room.$id }}</a>
-                            <td></td>
-                  </tr>
-            </table>
-        </header>
-    </div>
+    		<h2>Bloc Chat</h2>
+
+    		<div ng-controller='ModalCtrl as modal'>
+    			<button type="button" class="btn btn-default" ng-click="modal.open()">New room</button>
+    		</div>
+
+    		<table ng-repeat="room in chatRooms">
+      			<tr class="nav-list">
+        				<td>
+        					  <h4>{{room.$value}}</h4>
+        				</td>
+      			</tr>
+    		</table>
+
+  	</div>
 </section>
