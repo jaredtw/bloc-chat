@@ -1,0 +1,43 @@
+	body {
+ 		margin: 0;
+ 	}
+
+ 	ul {
+ 		list-style-type: none;
+ 		margin: 0;
+ 		padding: 0;
+ 		width: 20%;
+ 		background-color: #f0f6ff;
+ 		position: fixed;
+ 		height: 100%;
+ 		overflow: auto;
+ 	}
+
+  li .pagetitle {
+    background-color: grey;
+    color: black;
+  }
+
+ 	li a {
+ 		display: block;
+ 		color: #000000;
+ 		padding: 8px 16px;
+ 		text-decoration: none;
+ 	}
+
+ 	li a.active {
+ 		background-color: #acaccc;
+ 		color: black;
+ 	}
+
+ 	li a:hover:not(.active) {
+ 		background-color: #555;
+ 		color: white;
+ 	}
+
+ 	.messages-container {
+ 		margin-left: 25%;
+ 		padding: 1px 16px;
+ 		height: 1000px;
+ 		background-color: #feffff;
+ 	}

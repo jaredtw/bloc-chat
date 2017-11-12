@@ -1,19 +1,27 @@
 <section>
-  	<div class="rooms">
+  	<ul>
 
-    		<h2>Bloc Chat</h2>
+    		<li class='pagetitle' href="#">
+              <h3>Bloc Chat</h3>
+        </li>
 
-    		<div ng-controller='ModalCtrl as modal'>
+    		<li ng-controller='ModalCtrl as modal'>
     			<button type="button" class="btn btn-default" ng-click="modal.open()">New room</button>
-    		</div>
+    		</li>
 
-    		<table ng-repeat="room in chatRooms">
-      			<tr class="nav-list">
-        				<td>
-        					  <h4>{{room.$value}}</h4>
-        				</td>
-      			</tr>
-    		</table>
+    		<li>
+              <a href="#" ng-repeat="room in chatRooms" ng-click="setCurrentRoom(room)">
+                  <h4>{{ room.$value }}</h4></a>
+        </li>
+    </ul>
+
+
+    <div class="messages-container">
+          <h3>{{ currentRoom.$value }}</h3>
+          <div ng-repeat="message in messages">
+              {{ message.username }} (sent at: {{ message.sentAt }})
+              <br/> - {{ message.content }}
+          </div>
 
   	</div>
 </section>
