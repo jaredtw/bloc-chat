@@ -19,8 +19,9 @@
     <div class="messages-container">
           <h3>{{ currentRoom.$value }}</h3>
           <div ng-repeat="message in messages">
-              {{ message.username }} (sent at: {{ message.sentAt }})
+              <strong>{{ message.username }}</strong> (sent at: {{ message.sentAt }})
               <br/> - {{ message.content }}
+              <br/>
           </div>
 
   	</div>
