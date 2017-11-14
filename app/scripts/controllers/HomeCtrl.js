@@ -6,13 +6,13 @@
 
         $scope.open = function () {
             $uibModal.open({
-                templateUrl: 'roomsModal.html',
+                templateUrl: '/templates/modal.html',
                 controller: 'ModalInstanceCtrl'
             })
         };
 
         $scope.setCurrentRoom = function (room) {
-            $scope.currentRoom = room
+            $scope.currentRoom = room;
             console.log("Current Room ID: " + $scope.currentRoom.$id);
 
             $scope.messages = Message.getByRoomId(room.$id);
