@@ -1,28 +1,39 @@
 <section>
-  	<ul>
+  	<div>
+    		<ul>
 
-    		<li class='pagetitle' href="#">
-              <h3>Bloc Chat</h3>
-        </li>
+      			<li class='pagetitle' href="#">
+      				    <h3>Bloc Chat</h3>
+      			</li>
 
-    		<li ng-controller='ModalCtrl as modal'>
-    			<button type="button" class="btn btn-default" ng-click="modal.open()">New room</button>
-    		</li>
+      			<li ng-controller='ModalCtrl as modal'>
+      				    <button type="button" class="btn btn-primary" ng-click="modal.open()">New room</button>
+      			</li>
 
-    		<li>
-              <a href="#" ng-repeat="room in chatRooms" ng-click="setCurrentRoom(room)">
-                  <h4>{{ room.$value }}</h4></a>
-        </li>
-    </ul>
+      			<li>
+      				    <a href="#" ng-repeat="room in chatRooms" ng-click="setCurrentRoom(room)">
+      					     <h4>{{room.$value}}</h4></a>
+      			</li>
+
+    		</ul>
 
 
-    <div class="messages-container">
-          <h3>{{ currentRoom.$value }}</h3>
-          <div ng-repeat="message in messages">
-              <strong>{{ message.username }}</strong> (sent at: {{ message.sentAt }})
-              <br/> - {{ message.content }}
-              <br/>
-          </div>
+    		<div class="messages-container">
+    			   <h4>{{ currentRoom.$value }}</h4>
+          			<div ng-repeat="message in messages"><strong> {{ message.username }}</strong> (sent at: {{ message.sentAt | date:'y MMM dd, hh:mm:ss a' }}
+          				<br/> - {{ message.content }}
+          				<br/>
+          				<br/>
+          			</div>
+    		</div>
 
   	</div>
+
+  	<div class="footer" ng-show="currentRoom">
+  		  <h3 Write your message here...></h3> {{ currentUser }}:
+  		    <input ng-model="newMessage" />
+  		        <button class="btn btn-default" type="button" ng-click="sendMessage(currentRoom)"> Send </button>
+  	</div>
+
+
 </section>

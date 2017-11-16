@@ -1,12 +1,12 @@
 (function () {
     	function UserModalInstanceCtrl($scope, $uibModalInstance, $cookies) {
         		this.ok = function () {
-          			$cookies.put('blocChatCurrentUser', this.name);
+          			$cookies.put('blocChatCurrentUser', this.newUsername);
 
-          			console.log("You just created a new user: " + this.name);
+          			console.log("You just created a new user: " + this.newUsername);
           			console.log("You just created a new cookie: " + $cookies.blocChatCurrentUser);
 
-          			$uibModalInstance.close(this.name);
+          			$uibModalInstance.close($cookies.blocChatCurrentUser);
         		};
     	}
 
