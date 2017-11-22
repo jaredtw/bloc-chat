@@ -1,0 +1,17 @@
+<div class="modal-header">
+    	<h3 class="modal-title">Set a username</h3>
+    	<br/>
+</div>
+
+<div class="modal-body">
+    	<h5>This name will appear when you send a message </h5>
+    	<form ng-submit="usermodal.ok()">
+        		<div class="input-group animated fadeIn">
+        			<input type="text" class="form-control finderBar" ng-model="usermodal.newUsername" title="name" placeholder="Your user name here" autofocus>
+        		</div>
+    	</form>
+</div>
+
+<div class="modal-footer">
+	<button class="btn btn-primary" type="button" ng-click="usermodal.ok()">Set Username</button>
+</div>
